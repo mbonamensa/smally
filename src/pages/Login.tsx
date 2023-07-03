@@ -16,10 +16,8 @@ function Login() {
         if (user) navigate("/account");
     }, [user, loading]);
 
-    // console.log(loading)
     function handleChange(e: React.FormEvent<HTMLInputElement>) {
         const {name, value} = e.currentTarget
-        // setInput(e.currentTarget.value)
         setInput(prev => ({
             ...prev,
             [name]: value

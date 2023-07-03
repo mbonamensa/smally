@@ -70,6 +70,19 @@ a {
     }
 }
 
+.start-now-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 1rem 0;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: $lightblue;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .formOverlay {
     position: fixed;
     top: 0;

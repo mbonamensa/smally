@@ -11,13 +11,8 @@ function Login() {
     })
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
-    // const [loadScreen, setLoadScreen] = useState("")
 
     useEffect(() => {
-        // if (loading) {
-        //   setLoadScreen("Loading...")
-        // //   return;
-        // }
         if (user) navigate("/account");
     }, [user, loading]);
 

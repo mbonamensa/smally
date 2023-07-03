@@ -4,7 +4,7 @@ import LinkCard from "../components/LinkCard"
 import ShortnerInput from "../components/ShortnerInput"
 import AccountNavBar from "../components/AccountNavBar"
 import {signOut, auth} from "../firebase"
-import {Link, useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 
 
 import { data } from "../dummyData"
@@ -47,7 +47,7 @@ function Account()  {
         {formOverlay && <ShortnerInput handleClose={closeOverlay}/>}
         <div className="link-topic">
           <h2>Links</h2>
-          <button onClick={addNewLink}>Add</button>
+          <button onClick={addNewLink}>+ Add New</button>
         </div>
         {linkCards}
 

@@ -251,17 +251,18 @@ main button {
   padding: 0.2rem;
 }
 
-.links-topic {
+.link-topic {
   margin-top: 2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.links-topic button {
+.link-topic button {
   width: 100px;
   background-color: lightblue;
   border: none;
   border-radius: 0.5rem;
+  padding: 0.3rem;
 }
 
 @media (max-width: 764px) {

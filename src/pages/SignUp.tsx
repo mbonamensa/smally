@@ -9,15 +9,15 @@ function SignUp() {
         email: "",
         password: ""
     })
-    const [user, loading, error] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
-    const [loadScreen, setLoadScreen] = useState("")
+    // const [loadScreen, setLoadScreen] = useState("")
 
     useEffect(() => {
-        if (loading) {
-          setLoadScreen("Loading...")
-        //   return;
-        }
+        // if (loading) {
+        //   setLoadScreen("Loading...")
+        // //   return;
+        // }
         if (user) navigate("/account");
     }, [user, loading]);
 

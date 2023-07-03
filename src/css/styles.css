@@ -3,9 +3,10 @@
   padding: 0;
   margin: 0;
   font-family: "Karla", sans-serif;
+  box-sizing: border-box;
 }
 
-html, body, #root, .home {
+html, body, #root, .home, .account {
   position: absolute;
   width: 100%;
 }
@@ -16,7 +17,6 @@ body {
 
 a {
   text-decoration: none;
-  color: #F0EDEE;
 }
 
 .home, .account {
@@ -34,6 +34,13 @@ a {
   width: 90%;
   margin: 0 auto;
   padding: 2rem 0;
+}
+
+.account {
+  background-color: #F0EDEE;
+  color: #0A090C;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .hero {
@@ -56,8 +63,10 @@ a {
 }
 
 .start-now-btn {
+  display: block;
+  text-align: center;
   width: 100%;
-  max-width: 200px;
+  max-width: 260px;
   margin: 1rem 0;
   padding: 0.7rem;
   border-radius: 0.5rem;
@@ -65,6 +74,7 @@ a {
   background-color: #90DDF0;
   font-size: 1rem;
   font-weight: bold;
+  color: #0A090C;
   cursor: pointer;
 }
 
@@ -83,6 +93,60 @@ a {
   justify-content: center;
 }
 
+.formBox {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.formBox h2 {
+  margin-bottom: 1rem;
+}
+.formBox h2 a {
+  color: #2C666E;
+}
+.formBox button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  background: #90DDF0;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.form-container {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #F0EDEE;
+  color: #0A090C;
+}
+.form-container p {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-container a {
+  color: #2C666E;
+  text-decoration: underline;
+}
+
+input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.4rem 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid lightgrey;
+  border-radius: 0.5rem;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -96,16 +160,34 @@ nav div {
   justify-content: space-between;
   gap: 1rem;
 }
+nav a {
+  color: #F0EDEE;
+}
+
+.nav-colored {
+  padding: 0.5rem;
+}
+.nav-colored a {
+  color: #2C666E;
+}
+.nav-colored button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
 
 main .formBox {
   height: 250px;
   width: 90%;
   margin: 0 auto;
   max-width: 400px;
-  border: 0.1rem solid;
-  border-radius: 0.5rem;
-  padding: 2rem 1rem;
-  background-color: #F0EDEE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 main .formBox form {
   display: flex;
@@ -167,6 +249,19 @@ main button {
 }
 .link-details .link-btn {
   padding: 0.2rem;
+}
+
+.links-topic {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.links-topic button {
+  width: 100px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 @media (max-width: 764px) {

@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Karla', sans-serif;
+    box-sizing: border-box;
 }
 
 // Color variables
@@ -23,7 +24,7 @@ $black: #0A090C;
 }
 
 
-html, body, #root, .home {
+html, body, #root, .home, .account {
     position: absolute;
     width: 100%;
 }
@@ -34,7 +35,6 @@ body {
 
 a {
     text-decoration: none;
-    color: $white
 }
 
 .home, .account {
@@ -49,6 +49,14 @@ a {
     width: 90%;
     margin: 0 auto;
     padding: 2rem 0;
+}
+
+.account {
+    background-color: $white;
+    color: $black;
+    margin: 0 auto;
+    padding: 2rem;
+
 }
 
 .hero {
@@ -71,8 +79,10 @@ a {
 }
 
 .start-now-btn {
+    display: block;
+    text-align: center;
     width: 100%;
-    max-width: 200px;
+    max-width: 260px;
     margin: 1rem 0;
     padding: 0.7rem;
     border-radius: 0.5rem;
@@ -80,6 +90,7 @@ a {
     background-color: $lightblue;
     font-size: 1rem;
     font-weight: bold;
+    color: $black;
     cursor: pointer;
 }
 
@@ -98,6 +109,65 @@ a {
     justify-content: center;
 }
 
+.formBox {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    h2 {
+        margin-bottom: 1rem;
+        
+        a {
+            color: $blue;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        background: $lightblue;
+        border: none;
+        border-radius: 0.5rem;
+    }
+}
+
+.form-container {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $white;
+    color: $black;
+
+    p {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    a {
+        color: $blue;
+        text-decoration: underline;
+    }
+}
+
+input {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.4rem 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+}
+
 nav {
     @include flex();
 
@@ -106,6 +176,25 @@ nav {
         gap: 1rem;
 
     }
+
+    a {
+        color: $white
+    }
+}
+
+.nav-colored {
+    a {
+        color: $blue
+    }
+button {
+
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+    padding: 0.5rem;
 }
 
 main {
@@ -115,16 +204,23 @@ main {
         width: 90%;
         margin: 0 auto;
         max-width: 400px;
-        border: 0.1rem solid;
-        border-radius: 0.5rem;
-        padding: 2rem 1rem;
-        background-color: $white;
+        // border: 0.1rem solid;
+        // border-radius: 0.5rem;
+        // padding: 2rem 1rem;
+        // background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
 
         form {
             @include flex($dir: column);
             gap: 1rem;
         }
     }
+
+   
 
     input {
         width: 90%;
@@ -186,6 +282,20 @@ main {
         padding: 0.2rem;
     }
 
+}
+
+.links-topic {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+        width: 100px;
+        background-color: lightblue;
+        border: none;
+        border-radius: 0.5rem;
+    }
 }
 
 @media (max-width:764px) {

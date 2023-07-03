@@ -2,7 +2,7 @@
 
 function NavBar() {
     return (
-        <nav>
+        <nav className="">
             <h1><a href={window.location.host}>Smally</a></h1>
 
             <div>

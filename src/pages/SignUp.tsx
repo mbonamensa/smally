@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
-import {auth, logInWithEmailAndPassword} from "../firebase"
+import {auth, signUpWithEmailAndPassword} from "../firebase"
 import {Link, useNavigate } from "react-router-dom"
 import { useAuthState } from "react-firebase-hooks/auth"
 
-function Login() {
+function SignUp() {
 
     const [inputData, setInput] = useState({
         email: "",
@@ -31,15 +31,15 @@ function Login() {
         }))
     }
 
-    function handleLogin() {
-        logInWithEmailAndPassword(inputData.email, inputData.password)
+    function handleSignUp() {
+        signUpWithEmailAndPassword(inputData.email, inputData.password)
     }
 
     console.log(auth.currentUser)
 
     return (
         <div className="formBox">
-            <h2><Link to="/">Smally</Link></h2>
+            <h2>Smally</h2>
             <div className="form-container">
                 <input 
                 type="email"
@@ -55,8 +55,8 @@ function Login() {
                 onChange={handleChange} 
                 placeholder="Password"
                 />
-                <button onClick={handleLogin}>Login</button>
-                <p>Don't have an account? <Link to="/signup"> Sign Up</Link> </p>
+                <button onClick={handleSignUp}>Sign up</button>
+                <p>Already have an account? <Link to="/login">Login</Link> </p>
             </div>
 
         </div>
@@ -64,4 +64,4 @@ function Login() {
 }
 
 
-export default Login
+export default SignUp

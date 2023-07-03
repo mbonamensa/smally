@@ -1,14 +1,18 @@
-
 import { useState } from "react"
+
 import LinkCard from "../components/LinkCard"
-import NavBar from "../components/NavBar"
 import ShortnerInput from "../components/ShortnerInput"
+import AccountNavBar from "../components/AccountNavBar"
+import {signOut, auth} from "../firebase"
+import {Link, useNavigate } from "react-router-dom"
+
 
 import { data } from "../dummyData"
 
 function Account()  {
 
   const [formOverlay, setFormOverlay] = useState(false)
+  const navigate = useNavigate()
 
   function addNewLink() {
     setFormOverlay(true)
@@ -17,6 +21,12 @@ function Account()  {
   function closeOverlay() {
     setFormOverlay(false)
   }
+
+  function logOut() {
+    signOut(auth);
+    navigate("/");
+    console.log("logged out")
+  };
 
   // console.log(formOverlay)
 
@@ -33,7 +43,7 @@ function Account()  {
 
   return (
     <div className="account">
-        <NavBar />
+        <AccountNavBar logout={logOut}/>
         {formOverlay && <ShortnerInput handleClose={closeOverlay}/>}
         <div className="link-topic">
           <h2>Links</h2>

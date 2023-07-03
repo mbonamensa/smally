@@ -1,11 +1,7 @@
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signOut, } from "firebase/auth"
-import { 
-  getFirestore,
- } from "firebase/firestore"
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth"
+import { getFirestore} from "firebase/firestore"
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDit2yw99n18_1uD0dQGt0eOFEY4rQelZY",
@@ -22,16 +18,16 @@ const firestore = getFirestore(firebase)
 const auth = getAuth(firebase)
 
 
-// const logInWithEmailAndPassword = async (email, password) => {
-//   try {
-//     await signInWithEmailAndPassword(auth, email, password);
-//   } catch (err) {
-//     console.error(err);
-//     alert(err.message);
-//   }
-// };
+const logInWithEmailAndPassword = async (email:string, password:string) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err:any) {
+    console.error(err);
+    alert(err.message);
+  }
+};
 
-async function registerWithEmailAndPassword(email:string, password:string) {
+async function signUpWithEmailAndPassword(email:string, password:string) {
   try {
     await createUserWithEmailAndPassword(auth, email, password);
     // const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -57,15 +53,17 @@ async function registerWithEmailAndPassword(email:string, password:string) {
 //     alert(err.message);
 //   }
 // };
-const logout = () => {
-  signOut(auth);
-};
+// const logout = () => {
+//   signOut(auth);
+//   console.log("logged out")
+// };
 
 
 export {
     firebase,
     firestore,
     auth,
-    registerWithEmailAndPassword,
-    logout,
+    signOut,
+    signUpWithEmailAndPassword,
+    logInWithEmailAndPassword,
 }

@@ -1,24 +1,24 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {auth, registerWithEmailAndPassword} from "../firebase"
-// import {useNavigate } from "react-router-dom"
-// import { useAuthState } from "react-firebase-hooks/auth"
+import {Link, useNavigate } from "react-router-dom"
+import { useAuthState } from "react-firebase-hooks/auth"
 
 function UserForm() {
     const [inputData, setInput] = useState({
         email: "",
         password: ""
     })
-    // const [user, loading, error] = useAuthState(auth)
-    // const navigate = useNavigate()
-    // const [loadScreen, setLoadScreen] = useState("")
+    const [user, loading, error] = useAuthState(auth)
+    const navigate = useNavigate()
+    const [loadScreen, setLoadScreen] = useState("")
 
-    // useEffect(() => {
-    //     if (loading) {
-    //       setLoadScreen("Loading...")
-    //     //   return;
-    //     }
-    //     if (user) navigate("/account");
-    // }, [user, loading]);
+    useEffect(() => {
+        if (loading) {
+          setLoadScreen("Loading...")
+        //   return;
+        }
+        if (user) navigate("/account");
+    }, [user, loading]);
 
     // console.log(loading)
     function handleChange(e: React.FormEvent<HTMLInputElement>) {
@@ -38,7 +38,7 @@ function UserForm() {
 
     return (
         <div className="formBox">
-            <div >
+            <div className="form-container">
                 <input 
                 type="email"
                 name="email"
@@ -53,8 +53,10 @@ function UserForm() {
                 onChange={handleChange} 
                 placeholder="Password"
                 />
-                <button onClick={handleSignUp}>Sign in</button>
+                <button onClick={handleSignUp}>Login</button>
+                <p>Don't have an account? <Link to="/signup"> Sign Up</Link> </p>
             </div>
+
         </div>
     )
 }

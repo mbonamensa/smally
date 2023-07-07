@@ -32,7 +32,7 @@ function SignUp() {
 
     return (
         <div className="formBox">
-            <h2>Smally</h2>
+            <h2><Link to="/">Smally</Link></h2>
             <div className="form-container">
                 <input 
                 type="email"

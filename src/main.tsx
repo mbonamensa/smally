@@ -4,11 +4,14 @@ import {BrowserRouter} from "react-router-dom"
 
 import App from './App.tsx'
 import './css/styles.css'
+import { GlobalContextProvider } from './globalContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <GlobalContextProvider>
+        <App />
+      </GlobalContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

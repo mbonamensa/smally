@@ -67,7 +67,7 @@ a {
   text-align: center;
   width: 100%;
   max-width: 260px;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   padding: 0.7rem;
   border-radius: 0.5rem;
   border: none;
@@ -84,13 +84,26 @@ a {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.9098039216);
+  background: rgba(0, 0, 0, 0.81);
   color: white;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.formOverlay .close-btn a {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  color: #F0EDEE;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+.formOverlay .close-btn:hover {
+  color: #008189;
 }
 
 .formBox {
@@ -160,13 +173,19 @@ nav div {
   justify-content: space-between;
   gap: 1rem;
 }
-nav a {
+nav h1 a, nav .login-btn a {
   color: #F0EDEE;
 }
-
-.nav-colored {
-  padding: 0.5rem;
+nav .signup-btn a {
+  padding: 0.5rem 0.8rem;
+  background: #90DDF0;
+  border-radius: 0.5rem;
+  color: #0A090C;
+  font-weight: bold;
+  width: 100%;
+  display: block;
 }
+
 .nav-colored a {
   color: #2C666E;
 }
@@ -217,16 +236,21 @@ main button {
 .links {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  margin-top: 5rem;
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   padding: 1rem;
   border-radius: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem auto;
 }
 
 .link-analytics {
-  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .link-details .timestamp {
@@ -235,34 +259,58 @@ main button {
 .link-details .long-url {
   font-size: 0.9rem;
 }
-.link-details .url-btns {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.link-details .copy-btn {
+  background-color: #90DDF0;
 }
-.link-details .small-btn {
-  padding: 0.3rem 0.5rem;
+.link-details .share-btn {
+  background-color: #008189;
 }
 .link-details .short-url-code {
-  color: #90DDF0;
+  color: #008189;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 .link-details .link-btn {
   padding: 0.2rem;
 }
 
 .link-topic {
-  margin-top: 2rem;
+  margin: 3rem 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.link-topic button {
+.link-topic a {
   width: 100px;
   background-color: lightblue;
   border: none;
   border-radius: 0.5rem;
   padding: 0.3rem;
+  text-align: center;
+  color: #0A090C;
+  cursor: pointer;
+}
+
+.url-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.url-btns .small-btn {
+  width: 100%;
+  margin: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 0;
+  cursor: pointer;
+}
+.url-btns svg {
+  font-size: 1.1rem;
+  color: #008189;
+}
+.url-btns p {
+  display: flex;
+  align-items: baseline;
 }
 
 @media (max-width: 764px) {

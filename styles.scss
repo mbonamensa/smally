@@ -12,6 +12,7 @@ $white: #F0EDEE;
 $green: #07393C;
 $blue: #2C666E;
 $lightblue: #90DDF0;
+$lightgreen: #008189;
 $black: #0A090C;
 
 // Mixins
@@ -83,7 +84,7 @@ a {
     text-align: center;
     width: 100%;
     max-width: 260px;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     padding: 0.7rem;
     border-radius: 0.5rem;
     border: none;
@@ -100,13 +101,32 @@ a {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9098039216);
+    background: rgb(0 0 0 / 81%);
     color: white;
     z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .close-btn {
+        a {
+
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            color: $white;
+            font-size: 1rem;
+            border: 0;
+            cursor: pointer;
+        }
+        
+        &:hover {
+            color: $lightgreen;
+
+        }
+    }
 }
 
 .formBox {
@@ -159,6 +179,7 @@ a {
     }
 }
 
+
 input {
     width: 100%;
     height: 2.5rem;
@@ -170,15 +191,28 @@ input {
 
 nav {
     @include flex();
-
+    
     div {
         @include flex();
         gap: 1rem;
+        
+    }
+    
+   h1, .login-btn {
+        a {
 
+            color: $white
+        }
     }
 
-    a {
-        color: $white
+    .signup-btn a {
+        padding: 0.5rem 0.8rem;
+        background: $lightblue;
+        border-radius: 0.5rem;
+        color: $black;
+        font-weight: bold;
+        width: 100%;
+        display: block;
     }
 }
 
@@ -186,15 +220,15 @@ nav {
     a {
         color: $blue
     }
-    button {
+    // padding: 0.5rem;
 
+    button {
     background: none;
     border: none;
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
     }
-    padding: 0.5rem;
 }
 
 main {
@@ -243,15 +277,17 @@ main {
 }
 
 .links {
-    @include flex();
-    margin-top: 5rem;
-    border: 1px solid grey;
+    @include flex($align: stretch);
+    border: 1px solid lightgrey;
     padding: 1rem;
     border-radius: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem auto;
 }
 
 .link-analytics {
-    align-self: end;
+    @include flex($dir: column)
 }
 
 .link-details {
@@ -263,19 +299,19 @@ main {
         font-size: 0.9rem;
     }
 
-    .url-btns {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+
+    .copy-btn {
+        background-color: $lightblue;
     }
 
-    .small-btn {
-        padding: 0.3rem 0.5rem;
+    .share-btn {
+        background-color: $lightgreen;
     }
 
     .short-url-code {
-        color: $lightblue;
+        color: $lightgreen;
         font-size: 1.2rem;
+        font-weight: bold;
     }
 
     .link-btn {
@@ -285,19 +321,46 @@ main {
 }
 
 .link-topic {
-    margin-top: 2rem;
+    margin: 3rem 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
 
-    button {
+
+    a {
         width: 100px;
         background-color: lightblue;
         border: none;
         border-radius: 0.5rem;
         padding: 0.3rem;
+        text-align: center;
+        color: $black;
+        cursor: pointer;
     }
 }
+
+.url-btns {
+    @include flex();
+    
+    .small-btn {
+        width: 100%;
+        margin: 0.3rem 0.5rem;
+        border-radius: 0.5rem;
+        border: 0;
+        cursor: pointer;
+    }
+
+    svg {
+        font-size: 1.1rem;
+        color: $lightgreen;
+    }
+
+    p {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
 
 @media (max-width:764px) {
     html, body, #root, .home {

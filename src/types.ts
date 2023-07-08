@@ -4,5 +4,6 @@ export type LinkDataType = {
     name: string, 
     longUrl: string,
     shortCode: string,
+    shortUrl: string,
     totalClicks: number
 }

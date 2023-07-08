@@ -34,6 +34,7 @@ function Login() {
         <div className="formBox">
             <h2><Link to="/">Smally</Link></h2>
             <div className="form-container">
+            <div className="input-container">
                 <input 
                 type="email"
                 name="email"
@@ -41,6 +42,8 @@ function Login() {
                 onChange={handleChange} 
                 placeholder="Email"
                 />
+            </div>
+            <div className="input-container">
                 <input 
                 type="password"
                 name="password"
@@ -48,6 +51,7 @@ function Login() {
                 onChange={handleChange} 
                 placeholder="Password"
                 />
+            </div>
                 <button onClick={handleLogin}>Login</button>
                 <p className="account-ask">Don't have an account? <Link to="/signup"> Sign Up</Link> </p>
             </div>

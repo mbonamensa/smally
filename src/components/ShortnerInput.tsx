@@ -22,6 +22,7 @@ function ShortnerInput() {
         id: nanoid(),
         timestamp: new Date(), 
         shortCode: "",
+        shortUrl: "",
         totalClicks: 0
     })
 

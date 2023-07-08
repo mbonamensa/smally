@@ -5,7 +5,7 @@ import { LinkDataType } from "../types"
 
 
 
-function LinkCard({timestamp, name, longUrl, shortCode, totalClicks}: LinkDataType )  {
+function LinkCard({timestamp, name, longUrl, shortCode, shortUrl, totalClicks}: LinkDataType )  {
 
     const formattedTimestamp = format(timestamp, 'd/MM/y');
     
@@ -17,7 +17,7 @@ function LinkCard({timestamp, name, longUrl, shortCode, totalClicks}: LinkDataTy
                 {/* <p className="timestamp">{timestamp}</p> */}
                 <p className="timestamp">{formattedTimestamp}</p>
                 <p className="long-url">{longUrl}</p>
-                <p className="short-url-code">{window.location.host}/{shortCode}</p>
+                <a href={shortUrl} className="short-url-code">{shortCode}</a>
             </div>
             <div className="link-analytics">
                 <div className="url-btns">

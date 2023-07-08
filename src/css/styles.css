@@ -270,6 +270,9 @@ main button {
   justify-content: space-between;
 }
 
+.link-details {
+  word-break: break-all;
+}
 .link-details .timestamp {
   font-size: 0.7rem;
 }

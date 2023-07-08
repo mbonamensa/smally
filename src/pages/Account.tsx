@@ -4,9 +4,12 @@ import {signOut, auth} from "../firebase"
 import {Link, Outlet, useNavigate } from "react-router-dom"
 
 
-import { data } from "../dummyData"
+import { useContext } from "react"
+import { globalContext } from "../globalContext"
 
 function Account()  {
+
+  const {linkData} = useContext(globalContext)
 
   const navigate = useNavigate()
 
@@ -16,16 +19,27 @@ function Account()  {
     console.log("logged out")
   };
 
-  const linkCards = data.map(card => {
+  const linkCards = linkData.map(card => {
    return <LinkCard
       key={card.id}
+      id={card.id}
       timestamp={card.timestamp}
       name={card.name}
-      longURL={card.longURL}
+      longUrl={card.longUrl}
       shortCode={card.shortCode}
       totalClicks={card.totalClicks}
     />
   })
+  // const linkCards = data.map(card => {
+  //  return <LinkCard
+  //     key={card.id}
+  //     timestamp={card.timestamp}
+  //     name={card.name}
+  //     longURL={card.longURL}
+  //     shortCode={card.shortCode}
+  //     totalClicks={card.totalClicks}
+  //   />
+  // })
 
   return (
     <div className="account">

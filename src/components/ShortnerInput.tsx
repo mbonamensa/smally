@@ -3,20 +3,25 @@ import {BsXLg} from "react-icons/bs"
 
 import { globalContext } from "../globalContext"
 import { Link } from "react-router-dom"
+import { nanoid } from "nanoid"
 
 
 function ShortnerInput() {
     const {addNewLink} = useContext(globalContext)
 
-    const [urlData, setInput] = useState({
+    const [urlData, setUrlData] = useState({
         name: "",
-        longUrl: ""
+        longUrl: "",
+        id: nanoid(),
+        timestamp: new Date(), 
+        shortCode: "",
+        totalClicks: 0
     })
-    // console.log(urlData)
+    console.log(urlData)
 
     function handleChange(e: React.FormEvent<HTMLInputElement>) {
         const {name, value} = e.currentTarget
-        setInput(prev => ({
+        setUrlData(prev => ({
             ...prev,
             [name]: value
         }))

@@ -1,26 +1,22 @@
-import format from "date-fns/format"
+// import format from "date-fns/format"
+import { format } from 'date-fns';
 import {BsBarChart, BsBoxArrowUp, BsTrash3, BsClipboard} from "react-icons/bs"
+import { LinkDataType } from "../types"
 
 
 
-type LinkCard = {
-    // id: string,
-    timestamp: Date, 
-    name: string, 
-    longURL: string,
-    shortCode: string,
-    totalClicks: number
-}
+function LinkCard({timestamp, name, longUrl, shortCode, totalClicks}: LinkDataType )  {
 
-function LinkCard({timestamp, name, longURL, shortCode, totalClicks}: LinkCard )  {
-    // const createdAt = timestamp.toString()
+    const formattedTimestamp = format(timestamp, 'd/MM/y');
+    
   return (
     <>
         <div className="links">
             <div className="link-details">
                 <h2>{name}</h2>
-                <p className="timestamp">{format(timestamp, "d/MM/y")}</p>
-                <p className="long-url">{longURL}</p>
+                {/* <p className="timestamp">{timestamp}</p> */}
+                <p className="timestamp">{formattedTimestamp}</p>
+                <p className="long-url">{longUrl}</p>
                 <p className="short-url-code">{window.location.host}/{shortCode}</p>
             </div>
             <div className="link-analytics">

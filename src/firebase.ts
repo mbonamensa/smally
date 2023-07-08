@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth"
-import { getFirestore} from "firebase/firestore"
+import { getFirestore, collection} from "firebase/firestore"
 
 
 const firebaseConfig = {
@@ -16,6 +16,7 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 const firestore = getFirestore(firebase)
 const auth = getAuth(firebase)
+const linksCollection = collection(firestore, "links")
 
 
 const logInWithEmailAndPassword = async (email:string, password:string) => {
@@ -63,6 +64,7 @@ export {
     firebase,
     firestore,
     auth,
+    linksCollection,
     signOut,
     signUpWithEmailAndPassword,
     logInWithEmailAndPassword,

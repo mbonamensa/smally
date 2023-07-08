@@ -111,17 +111,15 @@ a {
     justify-content: center;
 
     .close-btn {
-        a {
 
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: none;
-            color: $white;
-            font-size: 1rem;
-            border: 0;
-            cursor: pointer;
-        }
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: none;
+        color: $white;
+        font-size: 1rem;
+        border: 0;
+        cursor: pointer;
         
         &:hover {
             color: $lightgreen;
@@ -345,7 +343,7 @@ main {
     gap: 1rem;
 
 
-    a {
+    button {
         width: 100px;
         background-color: lightblue;
         border: none;
@@ -378,6 +376,27 @@ main {
         align-items: baseline;
     }
 }
+
+.copied-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $lightgreen;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-in-out;
+  
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-50%) translateY(100%);
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  }
 
 
 @media (max-width:764px) {

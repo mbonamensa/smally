@@ -93,7 +93,7 @@ a {
   align-items: center;
   justify-content: center;
 }
-.formOverlay .close-btn a {
+.formOverlay .close-btn {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -300,7 +300,7 @@ main button {
   align-items: center;
   gap: 1rem;
 }
-.link-topic a {
+.link-topic button {
   width: 100px;
   background-color: lightblue;
   border: none;
@@ -331,6 +331,26 @@ main button {
 .url-btns p {
   display: flex;
   align-items: baseline;
+}
+
+.copied-box {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #008189;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-in-out;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 @media (max-width: 764px) {

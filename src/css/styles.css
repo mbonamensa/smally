@@ -9,6 +9,7 @@
 html, body, #root, .home, .account {
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 
 body {
@@ -139,8 +140,9 @@ a {
   border-radius: 0.5rem;
   background-color: #F0EDEE;
   color: #0A090C;
+  width: 100%;
 }
-.form-container p {
+.form-container .account-ask {
   margin-top: 2rem;
   display: flex;
   align-items: center;
@@ -155,9 +157,24 @@ input {
   width: 100%;
   height: 2.5rem;
   padding: 0.4rem 0.5rem;
-  margin: 1rem 0;
   border: 1px solid lightgrey;
   border-radius: 0.5rem;
+}
+
+.input-container {
+  margin: 1rem 0;
+}
+
+.validation-message {
+  font-size: 0.8rem;
+  color: red;
+  padding: 0 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.validation-message.show {
+  opacity: 1;
 }
 
 nav {

@@ -49,7 +49,7 @@ function SignUp() {
                 placeholder="Password"
                 />
                 <button onClick={handleSignUp}>Sign up</button>
-                <p>Already have an account? <Link to="/login">Login</Link> </p>
+                <p className="account-ask">Already have an account? <Link to="/login">Login</Link> </p>
             </div>
 
         </div>

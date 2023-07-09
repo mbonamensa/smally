@@ -45,20 +45,6 @@ async function signUpWithEmailAndPassword(email:string, password:string) {
   }
 }
 
-// const sendPasswordReset = async (email) => {
-//   try {
-//     await sendPasswordResetEmail(auth, email);
-//     alert("Password reset link sent!");
-//   } catch (err) {
-//     console.error(err);
-//     alert(err.message);
-//   }
-// };
-// const logout = () => {
-//   signOut(auth);
-//   console.log("logged out")
-// };
-
 
 export {
     firebase,

@@ -28,8 +28,6 @@ function Login() {
         logInWithEmailAndPassword(inputData.email, inputData.password)
     }
 
-    console.log(auth.currentUser)
-
     return (
         <div className="formBox">
             <h2><Link to="/">Smally</Link></h2>

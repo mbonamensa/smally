@@ -39,11 +39,11 @@ function GlobalContextProvider(props: {children: React.ReactNode}) {
         timestamp: new Date(), 
         shortCode: "",
         shortUrl: "",
+        shareUrl: "",
         totalClicks: 0
     })
 
     const [showInfoBox, setShowInfoBox] = useState(false)
-    console.log(showInfoBox)
 
     async function addNewLink(urlData: LinkDataType) {
     try {
@@ -53,11 +53,13 @@ function GlobalContextProvider(props: {children: React.ReactNode}) {
         
         const shortenedUrl = response.data.result.full_short_link
         const shortCode = response.data.result.short_link
+        const shareUrl = response.data.result.share_link
         
         const updatedUrlData: LinkDataType = {
         ...urlData,
         shortCode: shortCode,
-        shortUrl: shortenedUrl
+        shortUrl: shortenedUrl,
+        shareUrl: shareUrl
         };
 
         setLinkData((prevData) => [...prevData, updatedUrlData]);

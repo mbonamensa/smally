@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "firebase/auth"
-import { getFirestore, collection} from "firebase/firestore"
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,} from "firebase/auth"
+import { getFirestore, collection, addDoc} from "firebase/firestore"
 
 
 const firebaseConfig = {
@@ -31,14 +31,14 @@ const logInWithEmailAndPassword = async (email:string, password:string) => {
 async function signUpWithEmailAndPassword(email:string, password:string) {
   try {
     await createUserWithEmailAndPassword(auth, email, password);
-    // const res = await createUserWithEmailAndPassword(auth, email, password);
-    // const user = res.user;
-    // await addDoc(collection(firestore, "users"), {
-    //   uid: user.uid,
-    //   name,
-    //   authProvider: "local",
-    //   email,
-    // });
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(collection(firestore, "users"), {
+      uid: user.uid,
+      name,
+      authProvider: "local",
+      email,
+    });
   } catch (err:any) {
     console.error(err);
     alert(err.message);

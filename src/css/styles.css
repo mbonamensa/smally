@@ -6,12 +6,6 @@
   box-sizing: border-box;
 }
 
-html, body, #root, .home, .account {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 body {
   color: #F0EDEE;
 }
@@ -20,25 +14,17 @@ a {
   text-decoration: none;
 }
 
-.home, .account {
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  justify-content: normal;
-}
-
 .home {
   background-color: #07393C;
+  padding: 2rem 0;
 }
 
 .home-details {
   width: 90%;
   margin: 0 auto;
-  padding: 2rem 0;
 }
 
 .account {
-  background-color: #F0EDEE;
   color: #0A090C;
   margin: 0 auto;
   padding: 2rem;
@@ -57,6 +43,7 @@ a {
 .hero .hero-img {
   width: 100%;
   max-width: 31.25rem;
+  font-size: 0;
 }
 .hero .hero-text {
   width: 100%;
@@ -268,6 +255,13 @@ main button {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.qr-code-container {
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 
 .link-details {
@@ -317,13 +311,6 @@ main button {
   align-items: center;
   justify-content: space-between;
 }
-.url-btns .small-btn {
-  width: 100%;
-  margin: 0.3rem 0.5rem;
-  border-radius: 0.5rem;
-  border: 0;
-  cursor: pointer;
-}
 .url-btns svg {
   font-size: 1.1rem;
   color: #008189;
@@ -331,6 +318,15 @@ main button {
 .url-btns p {
   display: flex;
   align-items: baseline;
+}
+
+.small-btn {
+  width: 100%;
+  margin: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  background: none;
 }
 
 .copied-box {
@@ -353,10 +349,15 @@ main button {
   }
 }
 
+.loader-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 @media (max-width: 764px) {
-  html, body, #root, .home {
-    height: inherit;
-  }
   .hero {
     flex-wrap: wrap;
   }

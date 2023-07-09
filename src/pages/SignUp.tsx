@@ -34,20 +34,24 @@ function SignUp() {
         <div className="formBox">
             <h2><Link to="/">Smally</Link></h2>
             <div className="form-container">
-                <input 
-                type="email"
-                name="email"
-                value={inputData.email} 
-                onChange={handleChange} 
-                placeholder="Email"
-                />
-                <input 
-                type="password"
-                name="password"
-                value={inputData.password} 
-                onChange={handleChange} 
-                placeholder="Password"
-                />
+                <div className="input-container">
+                    <input 
+                    type="email"
+                    name="email"
+                    value={inputData.email} 
+                    onChange={handleChange} 
+                    placeholder="Email"
+                    />
+                </div>
+                <div className="input-container">
+                    <input 
+                    type="password"
+                    name="password"
+                    value={inputData.password} 
+                    onChange={handleChange} 
+                    placeholder="Password"
+                    />
+                </div>
                 <button onClick={handleSignUp}>Sign up</button>
                 <p className="account-ask">Already have an account? <Link to="/login">Login</Link> </p>
             </div>
